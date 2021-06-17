@@ -18,7 +18,7 @@ class Bookmark
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
     else
-      connection = PG.connect(dbname: 'bookmark_manager_test')
+      connection = PG.connect(dbname: 'bookmark_manager')
     end
 
     connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
