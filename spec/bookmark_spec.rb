@@ -19,4 +19,12 @@ describe Bookmark do
       expect(bookmarks).to include('http://www.bbc.co.uk')
     end
   end
+
+  context '.create' do
+    it 'adds a new bookmark' do
+      Bookmark.create(url: 'http://www.github.com')
+
+      expect(Bookmark.all).to include('http://www.github.com')
+    end
+  end
 end

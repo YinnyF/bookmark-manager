@@ -9,8 +9,8 @@ I want to display the list of websites I've saved
 ```
 ```
 As a time-pressed user
-So that I can save a website
-I would like to add the site's address and title to bookmark manager
+So that I can save a website for later retrieval
+I would like to add the site's address and title to Bookmark Manager
 ```
 
 ## Domain Model screenshot
