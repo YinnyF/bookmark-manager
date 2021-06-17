@@ -6,10 +6,10 @@ describe Bookmark do
   context '.all' do
     it 'displays all bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.makersacademy.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.bbc.co.uk');")
+      connection.exec("INSERT INTO bookmarks (url, title) VALUES('http://www.makersacademy.com', 'Makers');")
+      connection.exec("INSERT INTO bookmarks (url, title)  VALUES('http://www.destroyallsoftware.com', 'Destroy all software');")
+      connection.exec("INSERT INTO bookmarks (url, title)  VALUES('http://www.google.com', 'Google');")
+      connection.exec("INSERT INTO bookmarks (url, title)  VALUES('http://www.bbc.co.uk', 'BBC');")
 
       bookmarks = Bookmark.all
 
@@ -22,9 +22,10 @@ describe Bookmark do
 
   context '.create' do
     it 'adds a new bookmark' do
-      Bookmark.create(url: 'http://www.github.com')
+      bookmark = Bookmark.create(url: 'http://www.github.com', title: 'Github')
 
-      expect(Bookmark.all).to include('http://www.github.com')
+      expect(bookmark['title']).to eq('Github')
+      expect(bookmark['url']).to eq('http://www.github.com')
     end
   end
 end
