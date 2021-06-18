@@ -12,6 +12,11 @@ As a time-pressed user
 So that I can save a website for later retrieval
 I would like to add the site's address and title to Bookmark Manager
 ```
+```
+As a user
+So I can remove my bookmark from Bookmark Manager
+I want to delete a bookmark
+```
 
 ## Domain Model screenshot
 
